@@ -14,8 +14,14 @@ class CharacterController < ApplicationController
         redirect :'/stats/new'
     end
 
+    post '/character' do
+    end
+
     get 'character/:id/edit' do
         # similar to new but edit field contain entire form, not in separate parts
         erb :'/character/edit'
+    end
+
+    patch 'character/:id' do
     end
 end

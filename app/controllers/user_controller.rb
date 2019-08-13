@@ -4,10 +4,16 @@ class UserController < ApplicationController
         erb :'user/new'
     end
 
+    post '/user' do
+    end
+
     get '/user/:id/edit' do
         erb :'user/edit'
     end
 
+    patch '/user/:id' do
+    end
+    
     get 'user/:id' do
         erb :'user/show'
     end
