@@ -8,5 +8,6 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :state
       t.text :bio
+    end
   end
 end

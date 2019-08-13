@@ -4,10 +4,9 @@ create_table :stats do |t|
     t.integer :endurance
     t.integer :guile
     t.integer :wit
-    t.integer :character_id
 end
 
-create_table :character do |t|
+create_table :characters do |t|
     t.string :name
     t.string :race
     t.string :class
