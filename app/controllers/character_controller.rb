@@ -10,6 +10,8 @@ class CharacterController < ApplicationController
         # redirects to stat creation
         # saves primary, assigns stats to character
         erb :'/character/new'
+
+        redirect :'/stats/new'
     end
 
     get 'character/:id/edit' do
