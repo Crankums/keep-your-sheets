@@ -19,10 +19,17 @@ Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
 <br><br>Wit: <input type="number" name='wit' id='wit' step='1' min='3' max='18'> 
     Bonuses: <input type="number" name='wit_bonus' id='wit_bonus' step='1'><br>
 <br>
+<%# programmatically assign these? such as blahblah.items.each do{|item| item.name, item.damage, box for bonuses}%>
+Hit Points: <input type='number' name='hit_points' id='hit_points' step='1' min='1'><br><br>
 Weapons: <input type='text' name='weapon1' id='weapon1'> 
     Damage: <input type='number' name='die_count' id='die_count' step='1' min='1' max='2'>:d:<input type='number' name='die_type' id='die_type' step='2' min='4' max='12'><br>
 Weapons: <input type='text' name='weapon2' id='weapon2'> 
     Damage: <input type='number' name='die_count1' id='die_count1' step='1' min='1' max='2'>:d:<input type='number' name='die_type1' id='die_type1' step='2' min='4' max='12'><br>
-Spells:
-
+Spells: <input type='text' name='spell1' id='spell2' placeholder="Spell Name"> <br>
+    Effect: <input type='text' name='effect1' id='effect2' placeholder='Spell Effect'>
+Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_day' id='per_day' step='1' min='0'>
+<%# will programmatically assign checkboxes for spells per day. may need to create a new "item" MVC to account for this layer of complexity%>
+<br>Class and Racial Features: 
+<textarea name='feature' id='feature'>
+<br>Character Background & Bio: <textarea name='bio' id='bio'>
 </form>
