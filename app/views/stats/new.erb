@@ -6,3 +6,23 @@
 <%# features, abilities %>
 
 <%# bio, background %>
+<h2> store your character stats here</h2>
+<form action='/stats' method="POST">
+Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
+    Bonuses: <input type="number" name='might_bonus' id='might_bonus' step='1'>  
+<br><br>Agility: <input type="number" name='agility' id='guile' step='1' min='3' max='18'> 
+    Bonuses: <input type="number" name='agility_bonus' id='agility_bonus' step='1'>
+<br><br>Endurance: <input type="number" name='endurance' id='endurance' step='1' min='3' max='18'> 
+    Bonuses: <input type="number" name='endurance_bonus' id='endurance_bonus' step='1'>
+<br><br>Guile: <input type="number" name='guile' id='guile' step='1' min='3' max='18'> 
+    Bonuses: <input type="number" name='guile_bonus' id='guile_bonus' step='1'>
+<br><br>Wit: <input type="number" name='wit' id='wit' step='1' min='3' max='18'> 
+    Bonuses: <input type="number" name='wit_bonus' id='wit_bonus' step='1'><br>
+<br>
+Weapons: <input type='text' name='weapon1' id='weapon1'> 
+    Damage: <input type='number' name='die_count' id='die_count' step='1' min='1' max='2'>:d:<input type='number' name='die_type' id='die_type' step='2' min='4' max='12'><br>
+Weapons: <input type='text' name='weapon2' id='weapon2'> 
+    Damage: <input type='number' name='die_count1' id='die_count1' step='1' min='1' max='2'>:d:<input type='number' name='die_type1' id='die_type1' step='2' min='4' max='12'><br>
+Spells:
+
+</form>

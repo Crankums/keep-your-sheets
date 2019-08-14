@@ -4,3 +4,22 @@
 <%# enter or select a class %>
     <%# ^^radio buttons? %>
     <%# submit redirects to '/stats/new' %>
+<form action='/character' method='POST'>
+    Campaign: <input type='text' name='campaign' id='campaign'><br><br>
+    Character Name: <input type='text' name='char_name' id='char_name'><br><br>
+    Choose your character's race: <br>
+    Avian <input type='radio' name='race' value='Avian'><br>
+    Human <input type='radio' name='race' value='Human'><br>
+    Grognard <input type='radio' name='race' value='Grognard'><br>
+    Goblin <input type='radio' name='race' value='Goblin'><br>
+    Elf <input type='radio' name='race' value='Elf'><br>
+    Dwarf <input type='radio' name='race' value='Dwarf'><br><br>
+    Choose your character's class: <br>
+    Warrior <input type='radio' name='class' value='Warrior'><br>
+    Healer <input type='radio' name='class' value='Healer'><br>
+    Sorceror <input type='radio' name='class' value='Sorceror'><br>
+    Thief <input type='radio' name='class' value='Thief'><br>
+    That one hybrid class that seems like it can do everything, but really isn't all that good at anything in particular
+    <input type='radio' name='class' value="That one hybrid class that seems like it can do everything, but really isn't all that good at anything in particular"><br><br>
+    <input type='submit' value='Create Character'>
+</form>

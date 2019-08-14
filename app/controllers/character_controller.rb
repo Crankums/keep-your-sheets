@@ -2,6 +2,7 @@ class CharacterController < ApplicationController
 
     get '/character' do
         # shows a list of chars, select one to see or edit stats
+        
         erb :'character/show'
     end
 
@@ -11,7 +12,7 @@ class CharacterController < ApplicationController
         # saves primary, assigns stats to character
         erb :'/character/new'
 
-        redirect :'/stats/new'
+        # redirect :'/stats/new'
     end
 
     post '/character' do
