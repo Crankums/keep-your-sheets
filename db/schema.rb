@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_025125) do
+ActiveRecord::Schema.define(version: 2019_08_15_015919) do
 
   create_table "characters", force: :cascade do |t|
-    t.string "name"
+    t.string "char_name"
     t.string "race"
-    t.string "class"
+    t.string "char_class"
+    t.integer "user_id"
   end
 
   create_table "stats", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_025125) do
     t.integer "endurance"
     t.integer "guile"
     t.integer "wit"
+    t.integer "character_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_025125) do
     t.string "city"
     t.string "state"
     t.text "bio"
+    t.integer "character_id"
   end
 
 end

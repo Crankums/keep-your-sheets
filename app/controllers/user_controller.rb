@@ -5,6 +5,7 @@ class UserController < ApplicationController
     end
 
     post '/user' do
+        @user= User.create(params[:id])
     end
 
     get '/user/:id/edit' do

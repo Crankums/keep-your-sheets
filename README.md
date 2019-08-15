@@ -1,7 +1,7 @@
 # sinatra-port-project
 Sinatra Portfolio Project for Flatiron School
 
+-The stats presented here are a homebrewed variety of character attributes commonly found in tabletop roleplaying games. They are not specific to any particular system, but rather are designed to reflect a typical style. The further development goal would be to feed in a list of attribute data into a "rules engine", which would then interpret and assign the various attributes and build a character sheet out of it. The process would take a small amount of fine tuning (ex. one system might use "damage capacity" in place of "hit points", which might get it put into the "weapons" area instead of the "life/hit points/etc" area).
+Note: This does NOT perform any action in your game for you! This is simply a place to keep track of your character stats and make modifications as your game progresses. That is why there is no dice rolling utility or RNGs built in to perform any actions for you. Values are changeable, so you're given only minimal limitations on your ability to change them. It is between you, your party, and your DM to deal with if you make changes to your character or their stats that are not dictated by game rules or circumstances.
 
-Note: This does NOT perform any action in your game for you! This is simply a place to keep track of your character stats and make modifications as your game progresses. That is why there is no dice rolling utility or RNGs built in to perform any actions for you. Values are changeable, so you're given the ability to do so without limit. It is between you, your party, and your DM to deal with if you make changes to your character or their stats that are not dictated by game rules or circumstances.
-
-Creation notes: need to create HP attribute (add it to Stats_table) and Item MVC (which will have its own programmatic arena, but no way to actually call its views, as it's actually part of Stats)
+Creation notes: need to create `HP` attribute (add it to Stats_table) and `Item` MVC (which will have its own programmatic arena, but no way to actually call its views, as it's actually part of `Stats`).

@@ -1,15 +1,20 @@
 <%# displays the selected characters stats %>
-
+<%=@character.name%><br>
+<%=@character.class%><br>
+<%=@character.race%><br>
 <%# name, class, race %>
+<%=@stats.might%><br>
+<%=@stats.agility%><br>
+<%=@stats.endurance%><br>
+<%=@stats.guile%><br>
+<%=@stats.wit%><br>
+<br>
+<%@item.each do%>
+Weapon: <%=@item.name%><%=@item.die_count%>:d:<%=item.die_type%><br>
+<%end%>
 
-<%# should I just use DnD stats or make up something similar %>
-
-<%# weapon :: damage %>
-<%# weapon :: damage how many?%>
-<%# spells :: damage :: type %>
-    <%# same ?? %>
-
+<%=@stats.feature%><br><br>
 <%# other features %>
-
+<%=@stats.bio%>
 <%# character bio %>
 
