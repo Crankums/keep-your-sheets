@@ -1,8 +1,8 @@
 class CharacterController < ApplicationController
 
     get '/character' do
-        # shows a list of chars, select one to see or edit stats
-        
+        authenticate
+        @character = Character.find_by(params[:user_id])
         erb :'character/show'
     end
 

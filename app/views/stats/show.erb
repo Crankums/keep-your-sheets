@@ -1,20 +1,10 @@
 <%# displays the selected characters stats %>
-<%=@character.name%><br>
-<%=@character.class%><br>
+<%=@character.char_name%><br>
+<%=@character.char_class%><br>
 <%=@character.race%><br>
-<%# name, class, race %>
 <%=@stats.might%><br>
 <%=@stats.agility%><br>
 <%=@stats.endurance%><br>
 <%=@stats.guile%><br>
 <%=@stats.wit%><br>
 <br>
-<%@item.each do%>
-Weapon: <%=@item.name%><%=@item.die_count%>:d:<%=item.die_type%><br>
-<%end%>
-
-<%=@stats.feature%><br><br>
-<%# other features %>
-<%=@stats.bio%>
-<%# character bio %>
-

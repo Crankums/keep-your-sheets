@@ -1,4 +1,4 @@
 class Character < ActiveRecord::Base
     belongs_to :users
-    has_many :stats
+    has_one :stats
 end

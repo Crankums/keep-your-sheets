@@ -15,7 +15,7 @@ class UserController < ApplicationController
     patch '/user/:id' do
     end
     
-    get 'user/:id' do
+    get '/user' do
         erb :'user/show'
     end
 

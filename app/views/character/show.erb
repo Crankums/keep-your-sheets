@@ -1,5 +1,7 @@
 <%# list of characters %>
-
+<%# <%@characters.each do%>
+    <a href='/stats/<%=@character.id%>'><%=@character.char_name%></a><br/><br/>
 <%# link to create new character %>
-
+    <a href='/character/new'>Create a new character</a>
 <%# link to profile %>
+    <a href='/user'>

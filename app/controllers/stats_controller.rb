@@ -10,6 +10,8 @@ class StatsController < ApplicationController
     end
 
     get '/stats/:id' do
+        @character = Character.find_by(params[:user_id])
+        @stats = Stats.find_by(params[:character_id])
         erb :'/stats/show'
     end
 
