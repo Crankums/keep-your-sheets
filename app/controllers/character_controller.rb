@@ -2,26 +2,22 @@ class CharacterController < ApplicationController
 
     get '/characters/:id' do
         authenticate
-        @character = Character.find_by(params[:user_id])
-        erb :'character/show'
+        @char = Character.find_by(params[:user_id])
+        erb :'characters/show'
     end
 
     get '/characters/new' do
-        # creates form that where the primary stats are made
-        # redirects to stat creation
-        # saves primary, assigns stats to character
         erb :'/character/new'
-
     end
 
     post '/characters' do
-
+        @char = Character.create(:char_name => params[:char_name], :race => params[:race], :char_class => params[:char_class])
         redirect :'/stats/new'
     end
 
     get 'characters/:id/edit' do
         @char = Characters.find_by(id: params[:id])
-        @char.update(name: params[:name] )
+        @char.update(name: params[:name])
         erb :'/character/edit'
     end
 
