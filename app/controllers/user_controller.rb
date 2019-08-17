@@ -1,13 +1,13 @@
 class UserController < ApplicationController
 
     get '/users/new' do
-        erb :'user/new'
+        erb :'users/new'
     end
 
     
     get '/users/:id' do
         @user = current_user
-        erb :'user/show'
+        erb :'users/show'
     end
 
     post '/users' do
@@ -15,7 +15,7 @@ class UserController < ApplicationController
     end
 
     get '/users/:id/edit' do
-        erb :'user/edit'
+        erb :'users/edit'
     end
 
     patch '/users/:id' do

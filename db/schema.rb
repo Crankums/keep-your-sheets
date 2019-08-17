@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_16_034132) do
+ActiveRecord::Schema.define(version: 2019_08_17_155319) do
 
   create_table "characters", force: :cascade do |t|
     t.string "char_name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_08_16_034132) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "campaign"
   end
 
   create_table "stats", force: :cascade do |t|
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 2019_08_16_034132) do
     t.integer "character_id"
     t.text "features"
     t.text "bio"
+    t.integer "hit_points"
+    t.integer "per_day"
   end
 
   create_table "users", force: :cascade do |t|

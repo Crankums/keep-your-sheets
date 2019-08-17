@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     
     get '/login' do
-        redirect '/characters/:id' if logged_in?
+        redirect '/characters' if logged_in?
         @failed= false
         erb :'sessions/login'
     end
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
     get '/signup' do
         redirect '/users/:id' if logged_in?
-        erb :'user/new'
+        erb :'users/new'
     end
 
     get '/logout' do
