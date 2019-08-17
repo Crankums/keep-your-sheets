@@ -4,6 +4,10 @@
 <%# enter or select a class %>
     <%# ^^radio buttons? %>
     <%# submit redirects to '/stats/new' %>
+
+    <% if !!@message %>
+        <p class="danger"><%=@message%></p>
+        <% end %>
 <form action='/characters' method='POST'>
     Campaign: <input type='text' name='campaign' id='campaign'><br><br>
     Character Name: <input type='text' name='char_name' id='char_name'><br><br>

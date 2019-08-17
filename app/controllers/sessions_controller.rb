@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
     end
 
 
-    get '/logout' do
+    delete '/logout' do
         session.clear
     end
 

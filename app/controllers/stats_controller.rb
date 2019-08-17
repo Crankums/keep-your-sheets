@@ -12,7 +12,7 @@ class StatsController < ApplicationController
     end
 
     post '/stats' do
-        binding.pry
+        user = current_user
     end
 
     get '/stats/:id/edit' do

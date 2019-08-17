@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
     has_many :characters
 
     validates :username, presence: true, uniqueness: true
-    validates :password, length: {in: 7..12}
+    validates :password, length: {in: 7..12}, unless: ->(u){ u.password.blank? }
 end

@@ -2,17 +2,25 @@ class CharacterController < ApplicationController
 
     get '/characters' do
         authenticate
-        @char = Character.find_by(params[:user_id])
+        @char = current_user.characters
         erb :'characters/show'
     end
 
     get '/characters/new' do
+        authenticate
         erb :'/characters/new'
     end
 
     post '/characters' do
-        binding.pry
-        @char = Character.create(:char_name => params[:char_name], :race => params[:race], :char_class => params[:char_class])
+        authenticate
+        user = current_user
+        user.characters.build(:char_name => params[:char_name], :race => params[:race], :char_class => params[:char_class])
+        if user.save
+            redirect "/characters"
+        else
+            @message = "There was a problem creating your character"
+            erb :"characters/new"
+        end
         redirect :'/stats/new'
     end
 

@@ -12,7 +12,8 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/profile' do
-        @user = User.find_by(username: params[:username])
+        # binding.pry
+        @user = current_user
         erb :profile
     end
     

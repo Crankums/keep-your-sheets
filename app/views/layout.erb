@@ -12,10 +12,12 @@
     <h2>Character sheet storage utility</h2>
     <% if logged_in? %>
 
-     <p><a href='/profile'>Profile</a><a href='/characters'>Characters</a>
+     <p><a href='/profile'>Profile</a></p>  <p><a href='/characters'>Characters</a></p>
      <%end%>
     <%= yield %>
 
-    <a href='/logout'>Click here to logout</a>
+    <form action='/logout' method='POST'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Logout'>
 </body>
 </html>

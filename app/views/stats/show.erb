@@ -1,7 +1,5 @@
 <%# displays the selected characters stats %>
-Name: <%=@character.char_name%><br>
-Class: <%=@character.char_class%><br>
-Race: <%=@character.race%><br>
+<%# <%= render "characters/char" %> %>
 <br>
 Might: <%=@stats.might%><br>
 Agility: <%=@stats.agility%><br>
@@ -12,5 +10,5 @@ Wit: <%=@stats.wit%><br>
 Features: <%=@stats.features%><br>
 Bio: <%=@stats.bio%><br><br>
 <a href='/characters/:id/edit'>Click here to edit this character</a><br>
-<a href='/characters/:id'>Back to characters</a><br>
+<a href='/characters/'>Back to characters</a><br>
 

@@ -1,3 +1,5 @@
+
+
 <h3>Edit Character</h3>
     <form action="characters/<%= @char.id%>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="patch">
@@ -20,7 +22,7 @@
     <form action="/characters/<%= char.id%>" method="POST">
         This will delete your character and all of their stats.
         <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="id" value="<% @todo.id%>">
+        <input type="hidden" name="id" value="<% @char.id%>">
         <input type="submit" value="Delete Character">
     </form>
     <a href="/characters">
