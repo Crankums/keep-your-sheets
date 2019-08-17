@@ -6,6 +6,7 @@ class CreateStatsTable < ActiveRecord::Migration[5.2]
       t.integer :endurance
       t.integer :guile
       t.integer :wit
+      t.timestamps
     end
   end
 end

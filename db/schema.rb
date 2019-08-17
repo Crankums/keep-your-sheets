@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_08_16_034132) do
     t.string "char_name"
     t.string "race"
     t.string "char_class"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
   end
 
@@ -25,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_08_16_034132) do
     t.integer "endurance"
     t.integer "guile"
     t.integer "wit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "character_id"
     t.text "features"
     t.text "bio"
@@ -38,7 +42,9 @@ ActiveRecord::Schema.define(version: 2019_08_16_034132) do
     t.string "city"
     t.string "state"
     t.text "bio"
-    t.integer "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "characters"
   end
 
 end

@@ -4,11 +4,11 @@ class ApplicationController < Sinatra::Base
         set :public_folder, 'public'
         set :views, Proc.new { File.join(root, "../views/") }
         enable :sessions
-        set :session_secret, "porto_project"
+        set :session_secret, SESSION_SECRET
     end
 
     get '/' do
-        "Placeholder"
+        erb :index
     end
     
     helpers do

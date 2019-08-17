@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     
     get '/login' do
-        redirect '/character' if logged_in?
+        redirect '/characters/:id' if logged_in?
         @failed= false
         erb :'sessions/login'
     end
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         user =User.find_by(username: params[:username])
         if !!user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect to '/user'
+            redirect to '/users/:id'
         else
             @failed= true
             erb :'sessions/login'
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     end
 
     get '/signup' do
-        redirect '/character' if logged_in?
+        redirect '/users/:id' if logged_in?
         erb :'user/new'
     end
 

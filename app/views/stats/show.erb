@@ -1,10 +1,14 @@
 <%# displays the selected characters stats %>
-<%=@character.char_name%><br>
-<%=@character.char_class%><br>
-<%=@character.race%><br>
-<%=@stats.might%><br>
-<%=@stats.agility%><br>
-<%=@stats.endurance%><br>
-<%=@stats.guile%><br>
-<%=@stats.wit%><br>
+Name: <%=@character.char_name%><br>
+Class: <%=@character.char_class%><br>
+Race: <%=@character.race%><br>
 <br>
+Might: <%=@stats.might%><br>
+Agility: <%=@stats.agility%><br>
+Endurance: <%=@stats.endurance%><br>
+Guile: <%=@stats.guile%><br>
+Wit: <%=@stats.wit%><br>
+<br>
+Features: <%=@stats.features%>
+Bio: <%=@stats.bio%>
+<a href='/characters/:id'>

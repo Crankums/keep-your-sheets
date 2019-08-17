@@ -1,28 +1,37 @@
 class CharacterController < ApplicationController
 
-    get '/character' do
+    get '/characters/:id' do
         authenticate
         @character = Character.find_by(params[:user_id])
         erb :'character/show'
     end
 
-    get '/character/new' do
+    get '/characters/new' do
         # creates form that where the primary stats are made
         # redirects to stat creation
         # saves primary, assigns stats to character
-        erb :'/character/new'
+        erb :'/characters/new'
 
-        # redirect :'/stats/new'
     end
 
-    post '/character' do
+    post '/characters' do
+
+        redirect :'/stats/new'
     end
 
-    get 'character/:id/edit' do
-        # similar to new but edit field contain entire form, not in separate parts
+    get 'characters/:id/edit' do
+        @char = Characters.find_by(id: params[:id])
+        @char.update(name: params[:name] )
         erb :'/character/edit'
     end
 
-    patch 'character/:id' do
+    patch 'characters/:id' do
     end
+
+    delete 'characters/:id' do
+        @char = Characters.find_by(id: params[:id])
+        @char.destroy
+        redirect '/characters'
+    end
+
 end

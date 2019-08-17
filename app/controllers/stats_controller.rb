@@ -4,10 +4,6 @@ class StatsController < ApplicationController
     get '/stats/new' do
         erb :'/stats/new'
     end
-    
-    get '/stats' do
-        # were you looking for a specific character? click here to go back or here to sign up
-    end
 
     get '/stats/:id' do
         @character = Character.find_by(params[:user_id])
@@ -15,11 +11,11 @@ class StatsController < ApplicationController
         erb :'/stats/show'
     end
 
-    post '/stats/:id' do
+    post '/stats' do
     end
 
     get '/stats/:id/edit' do
-        erb :'/character/edit'
+        erb :'/characters/edit'
     end
 
     patch '/stats/:id' do

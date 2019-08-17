@@ -9,4 +9,8 @@ ActiveRecord::Base.establish_connection(
     :database => "db/development.sqlite"
 )
 
+if ENV['SINATRA_ENV'] == "development"
+    require_relative "../secret.rb"
+end
+require_relative '../constants'
 require_all 'app'
