@@ -10,6 +10,11 @@ class ApplicationController < Sinatra::Base
     get '/' do
         erb :index
     end
+
+    get '/profile' do
+        @user = User.find_by(username: params[:username])
+        erb :profile
+    end
     
     helpers do
         def logged_in?

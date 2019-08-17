@@ -10,6 +10,10 @@
 <body>
     <h1>Keep Your Sheets!</h1>
     <h2>Character sheet storage utility</h2>
+    <% if logged_in? %>
+
+     <p><a href='/profile'>Profile</a><a href='/characters'>Characters</a>
+     <%end%>
     <%= yield %>
 
     <a href='/logout'>Click here to logout</a>

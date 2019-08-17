@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         user =User.find_by(username: params[:username])
         if !!user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect to '/users/:id'
+            redirect to '/users'
         else
             @failed= true
             erb :'sessions/login'
@@ -18,9 +18,26 @@ class SessionsController < ApplicationController
     end
 
     get '/signup' do
-        redirect '/users/:id' if logged_in?
-        erb :'users/new'
+        redirect '/users' if logged_in?
+        erb :'sessions/signup'
     end
+
+    post '/users' do
+        @user = User.create(username: params[:username],
+            password: params[:username],
+            email: params[:email],
+            age: params[:age],
+            city: params[:city],
+            state: params[:state],
+            bio: params[:bio])        
+        if @user.errors.any?
+            erb :'sessions/signup'
+        else
+            session[:user_id] = @user.id
+            redirect '/profile'
+        end
+    end
+
 
     get '/logout' do
         session.clear

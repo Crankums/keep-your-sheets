@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
     has_many :characters
 
     validates :username, presence: true, uniqueness: true
+    validates :password, length: {in: 7..12}
 end

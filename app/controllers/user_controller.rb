@@ -5,7 +5,7 @@ class UserController < ApplicationController
     end
 
     
-    get '/users/:id' do
+    get '/users' do
         @user = current_user
         erb :'users/show'
     end
