@@ -1,0 +1,9 @@
+<form action='/user/<%= @user.id %>' method="POST">    
+<input id="hidden" type="hidden" name="_method" value="patch">
+    Name: <input type='text' name='name' id='name' value="<%=@user.name%>"><br><br>
+    Age: <input type='text' name='age' id='age' value="<%=@user.age%>"><br><br>
+    City: <input type='text' name='city' id='city' value="<%=@user.city%>"><br><br>
+    State: <input type='text' name='state' id='state' value="<%=@user.state%>"><br><br>
+    Tell us a little about yourself, and put any of your other handles (Twitter, Instagram, Twitch, etc) here: <br><textarea name="bio" id="bio" value="<%=@user.bio%>"></textarea><br><br>
+    <input type="submit" value="Update Profile">
+</form>    

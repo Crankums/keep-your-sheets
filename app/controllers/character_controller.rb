@@ -10,7 +10,7 @@ class CharacterController < ApplicationController
         # creates form that where the primary stats are made
         # redirects to stat creation
         # saves primary, assigns stats to character
-        erb :'/characters/new'
+        erb :'/character/new'
 
     end
 
