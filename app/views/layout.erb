@@ -11,13 +11,10 @@
     <h1>Keep Your Sheets!</h1>
     <h2>Character sheet storage utility</h2>
     <% if logged_in? %>
-
-     <p><a href='/profile'>Profile</a></p>  <p><a href='/characters'>Characters</a></p>
+     <h3><a href='/profile'>Profile</a> <a href='/characters'>Characters</a></h3>
      <%end%>
     <%= yield %>
-
-    <form action='/logout' method='POST'>
-    <input type='hidden' name='_method' value='delete'>
-    <input type='submit' value='Logout'>
+<br>
+    <a href='/logout'>Click here to logout</a>
 </body>
 </html>

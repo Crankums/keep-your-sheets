@@ -1,11 +1,11 @@
 <%# list of characters %>
 <%# <%@characters.each do%>
-<% if current_user.characters != nil%>
+<% if !current_user.characters.empty?%>
     <% current_user.characters.each do |char|%>
-        <a href='/stats/<%=@char.id%>'><%=@char.char_name%></a><br/><br/>
+        <a href='/stats/<%=char.id%>'><%=char.char_name%></a><br/><br/>
     <% end %>
     <% else %>
-        No characters yet! Create new ones below!
+        <p>No characters yet! Create new ones below!</p>
 <%end%>
 <%# link to create new character %>
     <a href='/characters/new'>Create a new character</a>

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     
     get '/login' do
-        redirect '/characters' if logged_in?
+        redirect '/profile' if logged_in?
         @failed= false
         erb :'sessions/login'
     end
@@ -39,7 +39,8 @@ class SessionsController < ApplicationController
     end
 
 
-    delete '/logout' do
+    get '/logout' do
+        "You have logged out"
         session.clear
     end
 

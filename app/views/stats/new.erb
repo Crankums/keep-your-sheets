@@ -4,20 +4,23 @@
 <%# spells :: damage :: type %>
 
 <%# features, abilities %>
-
+<%=@char.char_name%>
 <%# bio, background %>
+<% if !!@message %>
+        <p class="danger"><%=@message%></p>
+        <% end %>
 <h2> store your character stats here</h2>
 <form action='/stats' method="POST">
 Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
-    Bonuses: <input type="number" name='might_bonus' id='might_bonus' step='1'>  
+    <%# Bonuses: <input type="number" name='might_bonus' id='might_bonus' step='1'>   %>
 <br><br>Agility: <input type="number" name='agility' id='guile' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='agility_bonus' id='agility_bonus' step='1'>
+    <%# Bonuses: <input type="number" name='agility_bonus' id='agility_bonus' step='1'> %>
 <br><br>Endurance: <input type="number" name='endurance' id='endurance' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='endurance_bonus' id='endurance_bonus' step='1'>
+    <%# Bonuses: <input type="number" name='endurance_bonus' id='endurance_bonus' step='1'> %>
 <br><br>Guile: <input type="number" name='guile' id='guile' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='guile_bonus' id='guile_bonus' step='1'>
+    <%# Bonuses: <input type="number" name='guile_bonus' id='guile_bonus' step='1'> %>
 <br><br>Wit: <input type="number" name='wit' id='wit' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='wit_bonus' id='wit_bonus' step='1'><br>
+    <%# Bonuses: <input type="number" name='wit_bonus' id='wit_bonus' step='1'><br> %>
 <br>
 <%# programmatically assign these? such as blahblah.items.each do{|item| item.name, item.damage, box for bonuses}%>
 Hit Points: <input type='number' name='hit_points' id='hit_points' step='1' min='1'><br><br>

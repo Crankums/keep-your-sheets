@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/profile' do
-        # binding.pry
         @user = current_user
         erb :profile
     end
@@ -30,6 +29,11 @@ class ApplicationController < Sinatra::Base
             if !logged_in?
                 redirect '/login'
             end
+        end
+
+        def authenticate_user(char)
+            redirect to '/index' if !char
+            redirect to '/index' if current_user.id != cha.user_id
         end
     end
 end
