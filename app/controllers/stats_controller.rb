@@ -4,24 +4,26 @@ class StatsController < ApplicationController
     get '/stats/new' do
         authenticate
         @char = current_user.characters.last
-        binding.pry
+        # binding.pry
         erb :'/stats/new'
     end
 
     get '/stats/:id' do
         authenticate
         user= current_user
-        @char = Character.find_by(user_id: params[:user_id])
-        @stats = Stats.find_by(character_id: params[:character_id])
+        # binding.pry
+        @stats = Stats.find_by_id(params[:id])
+        @char = Character.find_by(id: @stats.character_id)
         erb :'/stats/show'
     end
 
     post '/stats' do
         authenticate
         char = current_user.characters.last
-        char.create_stats(params)
-        if char.save
-            redirect to '/characters'
+        stats=char.create_stats(params)
+        if stats.save
+            binding.pry
+            redirect to "/stats/#{stats.id}"
         else
             @message = "There was a problem creating your stat block"
             erb :'stats/new'   

@@ -1,8 +1,8 @@
 class CharacterController < ApplicationController
 
-    get '/characters' do
+    get '/characters/:id' do
         authenticate  
-        # @char = current_user.characters
+        @char = current_user.characters
         erb :'characters/show'
     end
 

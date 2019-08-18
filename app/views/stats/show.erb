@@ -1,15 +1,18 @@
 <%# displays the selected characters stats %>
-<%# <%= render "characters/char" %> %>
-<%= char.char_name%>
-<br>
+<%# <%= render "characters/char" %>
+<h4><%= @char.char_name%></h4>
 Might: <%=@stats.might%><br>
 Agility: <%=@stats.agility%><br>
 Endurance: <%=@stats.endurance%><br>
 Guile: <%=@stats.guile%><br>
 Wit: <%=@stats.wit%><br>
 <br>
+Hit Points: <%=@stats.hit_points%><br/>
+Spells Per Day: <%@stats.per_day.times do |p|%>
+    <input type="checkbox" name="spell_slot" id="spell_slot">
+    <% end %><br/>
 Features: <%=@stats.features%><br>
 Bio: <%=@stats.bio%><br><br>
-<a href='/characters/:id/edit'>Click here to edit this character</a><br>
-<a href='/characters'>Back to characters</a><br>
+<a href="/stats/<%@stats.id%>/edit>"Click here to edit this stat block</a><br>
+<a href="/characters/<%@char.user_id>">Back to characters</a><br>
 

@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
 
         def authenticate_user(char)
             redirect to '/index' if !char
-            redirect to '/index' if current_user.id != cha.user_id
+            redirect to '/index' if current_user.id != char.user_id
         end
     end
 end

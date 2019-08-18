@@ -21,11 +21,9 @@ Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
     <%# Bonuses: <input type="number" name='guile_bonus' id='guile_bonus' step='1'> %>
 <br><br>Wit: <input type="number" name='wit' id='wit' step='1' min='3' max='18'> 
     <%# Bonuses: <input type="number" name='wit_bonus' id='wit_bonus' step='1'><br> %>
-<br>
-<%# programmatically assign these? such as blahblah.items.each do{|item| item.name, item.damage, box for bonuses}%>
+<br><br>
 Hit Points: <input type='number' name='hit_points' id='hit_points' step='1' min='1'><br><br>
 Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_day' id='per_day' step='1' min='0'>
-<%# will programmatically assign checkboxes for spells per day. may need to create a new "item" MVC to account for this layer of complexity%>
 <br>Class and Racial Features: 
 <textarea name='features' id='features'></textarea>
 <br>Character Background & Bio: <textarea name='bio' id='bio'></textarea>

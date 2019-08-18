@@ -1,8 +1,8 @@
 <%# list of characters %>
 <%# <%@characters.each do%>
-<% if !current_user.characters.empty?%>
-    <% current_user.characters.each do |char|%>
-        <a href='/stats/<%=char.id%>'><%=char.char_name%></a><br/><br/>
+<% if !@char.empty?%>
+    <% @char.each do |char|%>
+        <a href='/stats/<%=char.stats.id%>'><%=char.char_name%></a><br/><br/>
     <% end %>
     <% else %>
         <p>No characters yet! Create new ones below!</p>
