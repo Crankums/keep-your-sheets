@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
 
     get '/profile' do
         @user = current_user
+        # binding.pry
         erb :profile
     end
     

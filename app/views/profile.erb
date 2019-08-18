@@ -1,7 +1,11 @@
 <h2> <%=@user.username%>'s profile<h2>
     
 <%# name*optional %>
-
+<p>Age: <%=@user.age if @user.age%></p>
+<p>City: <%= @user.city if @user.city %></p>
+<p>State: <%=@user.state if @user.state%></p>
+<br>
+<p>Bio: <%=@user.bio if @user.bio%></p>
 <%# vital numbers: age, city, state %>
 <%# headline/bio %>
 
