@@ -22,7 +22,6 @@ class StatsController < ApplicationController
         char = current_user.characters.last
         stats=char.create_stats(params)
         if stats.save
-            binding.pry
             redirect to "/stats/#{stats.id}"
         else
             @message = "There was a problem creating your stat block"
@@ -32,7 +31,7 @@ class StatsController < ApplicationController
 
     get '/stats/:id/edit' do
         @stats = Stats.find_by(character_id: params[:character_id])
-        erb :'/characters/edit'
+        erb :'/stats/edit'
     end
 
     patch '/stats/:id' do
@@ -47,6 +46,12 @@ class StatsController < ApplicationController
             features: params[:features],
             bio: params[:bio] 
         )
+        if @stats.save
+            redirect to "/stats/#{stats.id}"
+        else
+            @message = "There was a problem updating your character"
+            erb :"/stats/edit"
+
     end
 
 end

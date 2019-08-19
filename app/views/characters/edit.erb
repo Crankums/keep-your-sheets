@@ -1,5 +1,6 @@
-
-
+    <% if !!@message %>
+        <p class="danger"><%=@message%></p>
+        <% end %>
 <h3>Edit Character</h3>
     <form action="characters/<%= @char.id%>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="patch">

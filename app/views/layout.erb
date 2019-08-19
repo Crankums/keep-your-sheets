@@ -11,7 +11,7 @@
     <h1>Keep Your Sheets!</h1>
     <h2>Character sheet storage utility</h2>
     <% if logged_in? %>
-     <h3><a href='/profile'>Profile</a> <a href='/characters'>Characters</a></h3>
+     <h3><a href='/profile'>Profile</a> <a href="/characters/<%=current_user.id%>">Characters</a></h3>
      <%end%>
     <%= yield %>
 <br>

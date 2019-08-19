@@ -1,4 +1,8 @@
-<h2> store your character stats here</h2>
+<%# render partial for character name, race, class here %>
+    <% if !!@message %>
+        <p class="danger"><%=@message%></p>
+        <% end %>
+<h2> Update your character stats here</h2>
 <form action='/stats' method="POST">
 Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
     Bonuses: <input type="number" name='might_bonus' id='might_bonus' step='1'>  

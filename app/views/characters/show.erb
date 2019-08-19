@@ -1,5 +1,3 @@
-<%# list of characters %>
-<%# <%@characters.each do%>
 <% if !@char.empty?%>
     <% @char.each do |char|%>
         <a href='/stats/<%=char.stats.id%>'><%=char.char_name%></a><br/><br/>
@@ -10,4 +8,4 @@
 <%# link to create new character %>
     <a href='/characters/new'>Create a new character</a>
 <%# link to profile %>
-    <a href='/users'>
+    <a href="/profile">
