@@ -4,7 +4,7 @@ class CharacterController < ApplicationController
         authenticate 
         @user = current_user 
         @char = current_user.characters
-        erb :'characters/show'
+        erb :'characters/index'
         # change to characters/index
     end
 

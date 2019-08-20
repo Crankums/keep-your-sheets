@@ -1,6 +1,12 @@
 <%# displays the selected characters stats %>
 <%# <%= render "characters/char" %>
-<h4><%= @char.char_name%></h4>
+<form>
+    <button formaction="/stats/<%=@stats.id%>/edit">Click here to edit this Stat Block</button>
+</form>
+<a href="/stats/<%=@stats.id%>/edit">Click here to edit this stat block</a><br><br>
+<b><%= @char.char_name%></b><br>
+Race: <%= @char.race%><br>
+Class: <%= @char.char_class%><br><br>
 Might: <%=@stats.might%><br>
 Agility: <%=@stats.agility%><br>
 Endurance: <%=@stats.endurance%><br>
@@ -13,6 +19,5 @@ Spells Per Day: <%@stats.per_day.times do |p|%>
     <% end %><br/>
 Features: <%=@stats.features%><br>
 Bio: <%=@stats.bio%><br><br>
-<a href="/stats/<%=@stats.id%>/edit">Click here to edit this stat block</a><br>
 <a href="/characters">Back to characters</a><br>
 

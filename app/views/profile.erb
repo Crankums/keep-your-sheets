@@ -1,13 +1,13 @@
+<form>
+    <button formaction="/users/<%=@user.id%>/edit">Click here to edit your profile</button>
+</form>
+<a href="/users/<%=@user.id%>/edit">Click here to edit your profile</a>
 <h2> <%=@user.username%>'s profile<h2>
     
 <%# name*optional %>
 <p>Age: <%=@user.age if @user.age%></p>
 <p>City: <%= @user.city if @user.city %></p>
 <p>State: <%=@user.state if @user.state%></p>
-<br>
 <p>Bio: <%=@user.bio if @user.bio%></p>
-<%# vital numbers: age, city, state %>
-<%# headline/bio %>
-
-<%# list of public campaigns %>
-<a href="/characters/<%=@user.id%>">Characters</a>
+<a href="/characters">Characters</a>
+<br>

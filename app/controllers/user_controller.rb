@@ -5,25 +5,30 @@ class UserController < ApplicationController
     end
 
     
-    get '/users' do
+    get '/users/:id' do
         authenticate
         @user = current_user
-        erb :'users/show'
+        erb :'/profile'
     end
-
-    # post '/users' do
-    #     @user= User.create(params[:id], params)
-    # end
 
     get '/users/:id/edit' do
         authenticate
+        binding.pry
         @user = current_user
+        if params[:id] != current_user.id
+            @message = "Please log in to edit your page"
+            return erb :error
+        end
         erb :'users/edit'
     end
 
     patch '/users/:id' do
         @user = current_user
-        # @user.update(name: params[:name], age: params[:age], city:  params[:city], state: => params[:state], bio: => params[:bio])
+        @user.update(username: params[:username], 
+            age: params[:age], 
+            city: params[:city], 
+            state: params[:state], 
+            bio: params[:bio])
         if @user.save
             redirect to "/profile"
         else

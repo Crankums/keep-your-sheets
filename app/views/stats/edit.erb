@@ -1,9 +1,8 @@
-<%# render partial for character name, race, class here %>
-    <% if !!@message %>
+<% if !!@message %>
         <p class="danger"><%=@message%></p>
         <% end %>
 <h2> Update your character stats here</h2>
-<form action='/stats' method="POST">
+<form action='/stats/<%=@stats.id%>' method="POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
 Might: <input type="number" name='might' id='might' step='1' min='3' max='18' value="<%=@stats.might%>">
 
@@ -25,7 +24,7 @@ Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_
 <br>
 <form action="/stats/<%=@stats.id%>" method="POST">
         <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="id" value="<% @stats.id%>">
-        <input type="submit" value="Delete Character">
+        <input type="hidden" name="id" value="<%@stats.id%>">
+        <input type="submit" value="Delete Stat Block">
         This will delete your character and all of their stats.
     </form>

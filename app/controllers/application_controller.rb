@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/profile' do
+        authenticate
         @user = current_user
         # binding.pry
         erb :profile
@@ -33,8 +34,15 @@ class ApplicationController < Sinatra::Base
         end
 
         def authenticate_user(char)
-            redirect to '/index' if !char
-            redirect to '/index' if current_user.id != char.user_id
+            authenticate
+            if !char
+                @message = "Could not find character"
+                return erb :error
+            end
+            if current_user.id != char.user_id
+                @message = "You do not have access to this page"
+                return erb :error
+            end
         end
     end
 end
