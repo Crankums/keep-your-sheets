@@ -14,7 +14,6 @@ class ApplicationController < Sinatra::Base
     get '/profile' do
         authenticate
         @user = current_user
-        # binding.pry
         erb :profile
     end
     

@@ -13,7 +13,6 @@ class UserController < ApplicationController
 
     get '/users/:id/edit' do
         authenticate
-        binding.pry
         @user = current_user
         if params[:id] != current_user.id
             @message = "Please log in to edit your page"
