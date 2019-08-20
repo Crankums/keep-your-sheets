@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
     post '/users' do
         @user = User.create(username: params[:username],
-            password: params[:username],
+            password: params[:password],
             email: params[:email],
             age: params[:age],
             city: params[:city],

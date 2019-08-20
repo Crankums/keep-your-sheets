@@ -5,6 +5,7 @@ class CharacterController < ApplicationController
         @user = current_user 
         @char = current_user.characters
         erb :'characters/show'
+        # change to characters/index
     end
 
     get '/characters/new' do
@@ -35,10 +36,15 @@ class CharacterController < ApplicationController
         authenticate
         @char = Character.find_by(user_id: params[:user_id])
         authenticate_user(@char)
-        @char.update(char_name: => params[:char_name],
-            race: => params[:race],
-            char_class: => params[:char_name])
-        redirect '/characters'
+        @char.update(char_name: params[:char_name],
+            race: params[:race],
+            char_class: params[:char_name])
+        if @char.save
+            redirect '/characters'
+        else 
+            @message = "There was a problem updating your character"
+            erb :"/character/edit"
+        end
     end
 
     delete 'characters/:id' do

@@ -23,11 +23,12 @@ class UserController < ApplicationController
 
     patch '/users/:id' do
         @user = current_user
-        @user.update(name: => params[:name], age: => params[:age], city: => params[:city], state: => params[:state], bio: => params[:bio])
+        # @user.update(name: params[:name], age: params[:age], city:  params[:city], state: => params[:state], bio: => params[:bio])
         if @user.save
             redirect to "/profile"
         else
             @message = "There was a problem updating your profile"
             erb :"user/edit"
+        end
     end
 end

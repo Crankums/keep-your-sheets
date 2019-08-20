@@ -13,6 +13,6 @@ Spells Per Day: <%@stats.per_day.times do |p|%>
     <% end %><br/>
 Features: <%=@stats.features%><br>
 Bio: <%=@stats.bio%><br><br>
-<a href="/stats/<%@stats.id%>/edit>"Click here to edit this stat block</a><br>
-<a href="/characters/<%@char.user_id>">Back to characters</a><br>
+<a href="/stats/<%=@stats.id%>/edit">Click here to edit this stat block</a><br>
+<a href="/characters">Back to characters</a><br>
 

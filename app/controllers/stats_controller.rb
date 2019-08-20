@@ -30,12 +30,14 @@ class StatsController < ApplicationController
     end
 
     get '/stats/:id/edit' do
-        @stats = Stats.find_by(character_id: params[:character_id])
+        @stats = Stats.find_by(id: params[:id])
+        # binding.pry
         erb :'/stats/edit'
     end
 
     patch '/stats/:id' do
-        @stats = Stats.find_by(character_id: params[:character_id])
+        binding.pry
+        @stats = Stats.find_by(id: params[:id])
         @stats.update(
             might: params[:might],
             agility: params[:agility],
@@ -43,15 +45,17 @@ class StatsController < ApplicationController
             guile: params[:guile],
             wit: params[:wit],
             hit_points: params[:hit_points],
+            per_day: params[:per_day]
             features: params[:features],
             bio: params[:bio] 
         )
         if @stats.save
             redirect to "/stats/#{stats.id}"
         else
-            @message = "There was a problem updating your character"
+            @message = "There was a problem updating your stat block"
             erb :"/stats/edit"
-
+        end
+        
     end
 
 end

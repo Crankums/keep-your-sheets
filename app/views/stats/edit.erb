@@ -4,19 +4,28 @@
         <% end %>
 <h2> Update your character stats here</h2>
 <form action='/stats' method="POST">
-Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
-    Bonuses: <input type="number" name='might_bonus' id='might_bonus' step='1'>  
-<br><br>Agility: <input type="number" name='agility' id='guile' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='agility_bonus' id='agility_bonus' step='1'>
-<br><br>Endurance: <input type="number" name='endurance' id='endurance' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='endurance_bonus' id='endurance_bonus' step='1'>
-<br><br>Guile: <input type="number" name='guile' id='guile' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='guile_bonus' id='guile_bonus' step='1'>
-<br><br>Wit: <input type="number" name='wit' id='wit' step='1' min='3' max='18'> 
-    Bonuses: <input type="number" name='wit_bonus' id='wit_bonus' step='1'><br>
-<br>
-Hit Points: <input type='number' name='hit_points' id='hit_points' step='1' min='1'><br><br>
-Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_day' id='per_day' step='1' min='0'>
+<input id="hidden" type="hidden" name="_method" value="patch">
+Might: <input type="number" name='might' id='might' step='1' min='3' max='18' value="<%=@stats.might%>">
+
+<br><br>Agility: <input type="number" name='agility' id='guile' step='1' min='3' max='18' value="<%=@stats.agility%>"> 
+    
+<br><br>Endurance: <input type="number" name='endurance' id='endurance' step='1' min='3' max='18' value="<%=@stats.endurance%>" >
+
+<br><br>Guile: <input type="number" name='guile' id='guile' step='1' min='3' max='18' value="<%=@stats.guile%>"> 
+
+<br><br>Wit: <input type="number" name='wit' id='wit' step='1' min='3' max='18' value="<%=@stats.wit%>"> 
+<br><br>
+Hit Points: <input type='number' name='hit_points' id='hit_points' step='1' min='1' value="<%=@stats.hit_points%>"><br><br>
+Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_day' id='per_day' step='1' min='0' value="<%=@stats.per_day%>">
 <br>Class and Racial Features: 
-<textarea name='features' id='features'></textarea>
-<br>Character Background & Bio: <textarea name='bio' id='bio'></textarea>
+<textarea name='features' id='features'><%=@stats.features%></textarea>
+<br>Character Background & Bio: <textarea name='bio' id='bio'><%=@stats.bio%></textarea><br>
+<input type="submit" value="Update"><br>
+</form>
+<br>
+<form action="/stats/<%=@stats.id%>" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<% @stats.id%>">
+        <input type="submit" value="Delete Character">
+        This will delete your character and all of their stats.
+    </form>
