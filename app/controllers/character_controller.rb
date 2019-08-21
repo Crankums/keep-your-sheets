@@ -5,7 +5,6 @@ class CharacterController < ApplicationController
         @user = current_user 
         @char = current_user.characters
         erb :'characters/index'
-        # change to characters/index
     end
 
     get '/characters/new' do

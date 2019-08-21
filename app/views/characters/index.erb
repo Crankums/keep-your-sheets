@@ -1,9 +1,13 @@
-<% if !@char.empty?%>
-    <% @char.each do |char|%>
-        <a href='/stats/<%=char.stats.id%>'><%=char.char_name%></a><br/><br/>
+<% if !@char.empty? %>
+    <% @char.each do |char| %>
+        <% if !char.stats %>
+            <a href='/stats/new'><%= char.char_name %>  - Incomplete!</a><br><br>
+        <% else %>
+            <a href='/stats/<%= char.stats.id %>'><%= char.char_name %></a><br/><br/>   
+        <% end %>
     <% end %>
     <% else %>
         <p>No characters yet! Create new ones below!</p>
-<%end%>
+<% end %>
     <a href='/characters/new'>Create a new character</a>
     <br>

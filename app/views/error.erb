@@ -1,2 +1,5 @@
 <h3><div class="danger"><%= @message%></h3>
 <p><a href="/profile">Return to Profile</a></p>
+<%if !logged_in?%>
+    <a href='/login'>Perhaps you should log in first?</a>
+<% end %>

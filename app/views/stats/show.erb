@@ -1,9 +1,7 @@
-<%# displays the selected characters stats %>
-<%# <%= render "characters/char" %>
 <form>
     <button formaction="/stats/<%=@stats.id%>/edit">Click here to edit this Stat Block</button>
 </form>
-<a href="/stats/<%=@stats.id%>/edit">Click here to edit this stat block</a><br><br>
+<br>
 <b><%= @char.char_name%></b><br>
 Race: <%= @char.race%><br>
 Class: <%= @char.char_class%><br><br>

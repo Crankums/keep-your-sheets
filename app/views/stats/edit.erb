@@ -28,3 +28,8 @@ Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_
         <input type="submit" value="Delete Stat Block">
         This will delete your character and all of their stats.
     </form>
+    <% if @stats && @stats.errors.any?%>
+        <% @stats.errors.full_messages.each do |e|%>
+        <p class="danger"><%= e %></p>
+        <% end %>
+    <% end %>

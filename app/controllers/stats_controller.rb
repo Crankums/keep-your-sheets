@@ -1,10 +1,12 @@
 class StatsController < ApplicationController
 
-    # testing, should only be accessible from character creation
     get '/stats/new' do
         authenticate
-        binding.pry
         @char = current_user.characters.last
+        if !@char
+            @message = "No stats without a character!"
+            return erb :error
+        end
         erb :'/stats/new'
     end
 
@@ -61,9 +63,7 @@ class StatsController < ApplicationController
             @message = "There was a problem updating your stat block"
             erb :"/stats/edit"
         end
-        
     end
-
 
     delete "/stats/:id" do
         authenticate
@@ -73,6 +73,4 @@ class StatsController < ApplicationController
         @char.destroy
         redirect to "/characters"
     end
-
-
 end

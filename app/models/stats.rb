@@ -6,4 +6,3 @@ class Stats < ActiveRecord::Base
     validates :features, :bio, presence: true, format: { with: /[a-z0-9()=+-]+/, message: "can only contain letters, numbers, and [( ) = + or -]"}
 end
 
-# IMPORTANT!! Stats belong to a character, NOT A USER!! A USER DOES NOT HAVE A STAT BLOCK!
