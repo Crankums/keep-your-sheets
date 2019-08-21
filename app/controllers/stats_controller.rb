@@ -3,6 +3,7 @@ class StatsController < ApplicationController
     # testing, should only be accessible from character creation
     get '/stats/new' do
         authenticate
+        binding.pry
         @char = current_user.characters.last
         erb :'/stats/new'
     end
@@ -17,10 +18,10 @@ class StatsController < ApplicationController
 
     post '/stats' do
         authenticate
-        char = current_user.characters.last
-        stats=char.create_stats(params)
-        if stats.save
-            redirect to "/stats/#{stats.id}"
+        @char = current_user.characters.last
+        @stats=@char.create_stats(params)
+        if @stats.save
+            redirect to "/stats/#{@stats.id}"
         else
             @message = "There was a problem creating your stat block"
             erb :'stats/new'   

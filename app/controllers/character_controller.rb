@@ -15,13 +15,13 @@ class CharacterController < ApplicationController
 
     post '/characters' do
         authenticate
-        user = current_user
-        char = user.characters.build(params)
-        if char.save
+        @user = current_user
+        @char = @user.characters.build(params)
+        if @char.save
             redirect '/stats/new'
         else
             @message = "There was a problem creating your character"
-            erb :"characters/new"
+            return erb :"characters/new"
         end
         redirect '/stats/new'
     end

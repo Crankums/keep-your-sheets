@@ -16,7 +16,11 @@
     Healer <input type='radio' name='char_class' value='Healer'><br>
     Sorceror <input type='radio' name='char_class' value='Sorceror'><br>
     Thief <input type='radio' name='char_class' value='Thief'><br>
-    That one hybrid class that seems like it can do everything, but really isn't all that good at anything in particular
-    <input type='radio' name='char_class' value="That one hybrid class that seems like it can do everything, but really isn't all that good at anything in particular"><br><br>
+    Bard <input type='radio' name='char_class' value="Bard"><br><br>
     <input type='submit' value='Create Character'>
 </form>
+<% if @char && @char.errors.any?%>
+        <% @char.errors.full_messages.each do |e|%>
+        <p class="danger"><%= e %></p>
+    <% end %>
+<% end %>

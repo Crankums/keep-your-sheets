@@ -44,6 +44,7 @@ class SessionsController < ApplicationController
     get '/logout' do
         "You have logged out"
         session.clear
+        erb :"sessions/logout"
     end
 
 end

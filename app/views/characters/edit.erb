@@ -27,3 +27,8 @@
         <input type="submit" value="Delete Character">
     </form>
     <a href="/characters">
+    <% if @char && @char.errors.any?%>
+        <% @char.errors.full_messages.each do |e|%>
+        <p class="danger"><%= e %></p>
+    <% end %>
+<% end %>

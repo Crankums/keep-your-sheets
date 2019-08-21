@@ -24,3 +24,8 @@ Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_
 <br>Character Background & Bio: <textarea name='bio' id='bio'></textarea>
 <input type='submit' value='Enter Stats'>
 </form>
+<% if @stats && @stats.errors.any?%>
+        <% @stats.errors.full_messages.each do |e|%>
+        <p class="danger"><%= e %></p>
+    <% end %>
+<% end %>
