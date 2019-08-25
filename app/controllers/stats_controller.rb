@@ -12,10 +12,21 @@ class StatsController < ApplicationController
 
     get '/stats/:id' do
         authenticate
+        # binding.pry
+
         user= current_user
         @stats = Stats.find_by_id(params[:id])
+        if !@stats
+            redirect to "/characters"
+        end
         @char = Character.find_by(id: @stats.character_id)
+        
+        if user.id != @char.user_id
+            @message = "You do not have access to this resource"
+            return erb :error
+        else
         erb :'/stats/show'
+        end
     end
 
     post '/stats' do

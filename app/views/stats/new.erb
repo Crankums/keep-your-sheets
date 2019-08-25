@@ -18,8 +18,8 @@ Might: <input type="number" name='might' id='might' step='1' min='3' max='18'>
 Hit Points: <input type='number' name='hit_points' id='hit_points' step='1' min='1'><br><br>
 Spells per day (based on your Wit or Guile Stat):<input type='number' name='per_day' id='per_day' step='1' min='0'>
 <br>Class and Racial Features: 
-<textarea name='features' id='features'></textarea>
-<br>Character Background & Bio: <textarea name='bio' id='bio'></textarea>
+<textarea placeholder="Enter features here or 'None' if none available" name='features' id='features'></textarea>
+<br>Character Background & Bio: <textarea placeholder="Enter character bio here or 'None' if none available" name='bio' id='bio' ></textarea>
 <input type='submit' value='Enter Stats'>
 </form>
 <% if @stats && @stats.errors.any?%>
