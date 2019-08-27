@@ -1,6 +1,9 @@
 <form>
     <button formaction="/stats/<%=@stats.id%>/edit">Click here to edit this Stat Block</button>
 </form>
+<form>
+    <button formaction="/characters/<%=@char.id%>/edit">Click here to edit your Character</button>
+</form>
 <br>
 <b><%= @char.char_name%></b><br>
 Race: <%= @char.race%><br>

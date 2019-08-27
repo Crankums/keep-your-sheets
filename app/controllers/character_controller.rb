@@ -25,21 +25,23 @@ class CharacterController < ApplicationController
         redirect '/stats/new'
     end
 
-    get 'characters/:id/edit' do
+    get '/characters/:id/edit' do
         authenticate
-        @char = Characters.find_by(user_id: params[:user_id])
-        erb :'/character/edit'
+        @user = current_user
+        @char = @user.characters.find_by_id(params[:id])
+        erb :'/characters/edit'
     end
 
-    patch 'characters/:id' do
+    patch '/characters/:id' do
         authenticate
-        @char = Character.find_by(user_id: params[:user_id])
+        @user = current_user
+        @char = @user.characters.find_by_id(params[:id])
         authenticate_user(@char)
         @char.update(char_name: params[:char_name],
             race: params[:race],
             char_class: params[:char_name])
         if @char.save
-            redirect '/characters'
+            redirect to "/stats/#{@char.stats.id}"
         else 
             @message = "There was a problem updating your character"
             erb :"/character/edit"

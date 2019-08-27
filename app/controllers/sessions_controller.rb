@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
     
     get '/login' do
-        # binding.pry
         redirect '/profile' if logged_in?
         @failed= false
         erb :'sessions/login'

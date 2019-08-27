@@ -12,8 +12,6 @@ class StatsController < ApplicationController
 
     get '/stats/:id' do
         authenticate
-        # binding.pry
-
         user= current_user
         @stats = Stats.find_by_id(params[:id])
         if !@stats
@@ -44,6 +42,7 @@ class StatsController < ApplicationController
     get '/stats/:id/edit' do
         authenticate
         @stats = Stats.find_by(id: params[:id])
+        authenticate_user(@char = Character.find_by_id(@stats.character_id))
         if !@stats
             @message= "You do not have access to this page"
            return erb :error
@@ -55,9 +54,9 @@ class StatsController < ApplicationController
 
     patch '/stats/:id' do
         authenticate
-        # binding.pry
         @stats = Stats.find_by(id: params[:id])
         @char = Character.find_by_id(@stats.character_id)
+        authenticate_user(@char)
         @stats.update(
             might: params[:might],
             agility: params[:agility],
@@ -80,6 +79,7 @@ class StatsController < ApplicationController
         authenticate
         @stats = Stats.find_by(id: params[:id])
         @char = Character.find_by_id(@stats.character_id)
+        authenticate_user(@char)
         @stats.destroy
         @char.destroy
         redirect to "/characters"
