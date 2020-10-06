@@ -1,0 +1,15 @@
+.danger a{
+    color: red;
+}
+
+body {
+    background-color: rgb(226, 216, 216);
+}
+
+h1 {
+    color: #008000;
+}
+
+h2{
+    color: green;
+}
