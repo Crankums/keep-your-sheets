@@ -1,24 +1,37 @@
     <% if !!@message %>
         <p class="danger"><%=@message%></p>
         <% end %>
+<div class='new-character'>
 <form action='/characters' method='POST'>
-    Campaign: <input type='text' name='campaign' id='campaign' value='None'><br><br>
-    Character Name: <input type='text' name='char_name' id='char_name'><br><br>
-    Choose your character's race: <br>
-    Avian <input type='radio' name='race' value='Avian'><br>
-    Human <input type='radio' name='race' value='Human'><br>
-    Grognard <input type='radio' name='race' value='Grognard'><br>
-    Goblin <input type='radio' name='race' value='Goblin'><br>
-    Elf <input type='radio' name='race' value='Elf'><br>
-    Dwarf <input type='radio' name='race' value='Dwarf'><br><br>
-    Choose your character's class: <br>
-    Warrior <input type='radio' name='char_class' value='Warrior'><br>
-    Healer <input type='radio' name='char_class' value='Healer'><br>
-    Sorceror <input type='radio' name='char_class' value='Sorceror'><br>
-    Thief <input type='radio' name='char_class' value='Thief'><br>
-    Bard <input type='radio' name='char_class' value="Bard"><br><br>
+    <p>Campaign: <input type='text' name='campaign' id='campaign' value='None'></p>
+    <p>Character Name: <input type='text' name='char_name' id='char_name'></p>
+    <p>Choose your character's race:</p>
+    <ul>
+    <label for='button-avian'>Avian</label>
+    <input type='radio' name='race' value='Avian' id="button-avian">
+    <label for='button-human'>Human</label>
+    <input type='radio' name='race' value='Human' id='button-human'>
+    <label for='button-grognard'>Grognard</label>
+    <input type='radio' name='race' value='Grognard' id='button-grognard'>
+    <label for='button-avian'>Goblin</label>
+    <input type='radio' name='race' value='Goblin' id='button-goblin'>
+    <label for='button-avian'>Elf</label>
+    <input type='radio' name='race' value='Elf' id='button-elf'>
+    <label for='button-avian'>Dwarf</label>
+    <input type='radio' name='race' value='Dwarf' id='button-dwarf'>
+    </ul>
+    
+    <p>Choose your character's class:</p>
+    <ul>
+    Warrior <input type='radio' name='char_class' value='Warrior'>
+    Healer <input type='radio' name='char_class' value='Healer'>
+    Sorceror <input type='radio' name='char_class' value='Sorceror'>
+    Thief <input type='radio' name='char_class' value='Thief'>
+    Bard <input type='radio' name='char_class' value="Bard">
+    </ul>
     <input type='submit' value='Create Character'>
 </form>
+</div>
 <% if @char && @char.errors.any?%>
         <% @char.errors.full_messages.each do |e|%>
         <p class="danger"><%= e %></p>

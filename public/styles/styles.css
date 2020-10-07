@@ -1,10 +1,11 @@
 
-.danger a{
+.danger {
     color: red;
 }
 
 body {
     background-color: rgb(226, 216, 216);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -13,6 +14,49 @@ h1 {
 
 h2{
     color: green;
+}
+
+input[type=submit]{
+    border-radius: 4px;
+    width: 50%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+input[type=text],
+input[type=password] {
+    border-radius: 4px;
+    width: 50%;
+    padding: 10px;
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#username{
+    margin: 20px
+}
+#password{
+    margin: 20px;
+}
+
+.new-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-character form{
+    display: block;
+    text-align: left;
+}
+
+form label {
+    display: block;
+
 }
 
 .footer {
