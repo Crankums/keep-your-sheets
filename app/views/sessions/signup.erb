@@ -1,16 +1,19 @@
-
-<form action='/users' method="POST">
-    Username: <input type='text' name='username' id='username'><br><br>
-    Email: <input type='text' name='email' id='email'><br><br>
-    Password: <input type='password' name='password' id='password'><br><br>
-    <%# confirm password %>
-    Age: <input type='text' name='age' id='age' placeholder="Optional"><br><br>
-    City: <input type='text' name='city' id='city' placeholder="Optional"><br><br>
-    State: <input type='text' name='state' id='state' placeholder="Optional, initials, ie IL, MD, etc"><br><br>
-    Tell us a little about yourself, and put any of your other handles (Twitter, Instagram, Twitch, etc) here: <br><textarea name="bio" id="bio" placeholder="Optional"></textarea><br><br>
-    <input type="submit" value="Create New User">
-</form>
-
+<div class='new-user'>
+    <form action='/users' method="POST">
+        <ul>
+            <li><label for="username">Username:</label><input type='text' name='username' id='username'></li>
+            <li><label for="email">Email:</label><input type='text' name='email' id='email'></li>
+            <li><label for="password">Password:</label><input type='password' name='password' id='password'></li>
+            <li><label for="age">Age:</label><input type='text' name='age' id='age' placeholder="Optional"></li>
+            <li><label for="city">City:</label><input type='text' name='city' id='city' placeholder="Optional"></li>
+            <li><label for="state">State:</label><input type='text' name='state' id='state' maxlength='2' ></li>
+        </ul>
+        <div class="user-bio">
+            <textarea name="bio" id="bio" placeholder="Tell us a little about yourself, and put any of your other handles (Twitter, Instagram, Twitch, etc) here:"></textarea>
+        </div>
+        <input type="submit" value="Create New User">
+    </form>
+</div>
 <% if @user && @user.errors.any?%>
         <% @user.errors.full_messages.each do |e|%>
         <p class="danger"><%= e %></p>

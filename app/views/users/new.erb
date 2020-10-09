@@ -7,15 +7,15 @@
 <%# bio/headline/catch phrase* %>
 <%# submit %>
 <div class="new-user">
-<form action='/users' method="POST">
-    Username: <input type='text' name='username' id='username'>
-    Email: <input type='text' name='email' id='email'>
-    Password: <input type='password' name='password' id='password'><br><br>
-    <%# confirm password %>
-    Age: <input type='text' name='age' id='age'><br><br>
-    City: <input type='text' name='city' id='city'><br><br>
-    State: <input type='text' name='state' id='state'><br><br>
-    Tell us a little about yourself, and put any of your other handles (Twitter, Instagram, Twitch, etc) here: <br><textarea name="bio" id="bio"></textarea><br><br>
-    <input type="submit" value="Create New User">
-</form>
+    <form action='/users' method="POST">
+        Username: <input type='text' name='username' id='username'>
+        Email: <input type='text' name='email' id='email'>
+        Password: <input type='password' name='password' id='password'>
+        <%# confirm password %>
+        Age: <input type='text' name='age' id='age'>
+        City: <input type='text' name='city' id='city'>
+        State: <input type='text' name='state' id='state'>
+        Tell us a little about yourself, and put any of your other handles (Twitter, Instagram, Twitch, etc) here: <textarea name="bio" id="bio"></textarea>
+        <input type="submit" value="Create New User">
+    </form>
 </div>

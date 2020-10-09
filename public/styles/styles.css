@@ -26,8 +26,19 @@ input[type=submit]{
 input[type=text],
 input[type=password] {
     border-radius: 4px;
-    width: 50%;
+    width: 25%;
     padding: 10px;
+    margin: 20px;
+}
+
+#state{
+    width: 5%
+}
+
+#bio{
+    width: 500px;
+    height: 215px;
+    margin: 5px;
 }
 
 .login form{
@@ -36,17 +47,18 @@ input[type=password] {
     justify-content: center;
 }
 
-#username{
+/* #username{
     margin: 20px
 }
 #password{
     margin: 20px;
-}
+} */
 
 .new-user{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+    /* flex-direction: column; */
+    /* justify-content: left; */
+    
 }
 
 .new-character {
