@@ -4,21 +4,28 @@
 <form>
     <button formaction="/characters/<%=@char.id%>/edit">Click here to edit your Character</button>
 </form>
-<br>
-<b><%= @char.char_name%></b><br>
-Race: <%= @char.race%><br>
-Class: <%= @char.char_class%><br><br>
-Might: <%=@stats.might%><br>
-Agility: <%=@stats.agility%><br>
-Endurance: <%=@stats.endurance%><br>
-Guile: <%=@stats.guile%><br>
-Wit: <%=@stats.wit%><br>
-<br>
-Hit Points: <%=@stats.hit_points%><br/>
-Spells Per Day: <%@stats.per_day.times do |p|%>
-    <input type="checkbox" name="spell_slot" id="spell_slot">
-    <% end %><br/>
-Features: <%=@stats.features%><br>
-Bio: <%=@stats.bio%><br><br>
+<div id='stat-block'>
+    <div id='name-race-class'>
+        <b><%= @char.char_name%></b><br>
+        Race: <%= @char.race%><br>
+        Class: <%= @char.char_class%><br><br>
+    </div>
+    <div id='stat-scores'>
+        Might: <%=@stats.might%><br>
+        Agility: <%=@stats.agility%><br>
+        Endurance: <%=@stats.endurance%><br>
+        Guile: <%=@stats.guile%><br>
+        Wit: <%=@stats.wit%><br>
+    </div>    
+    <div id='stat-trackers'>
+        Hit Points: <%=@stats.hit_points%><br/>
+        Spells Per Day: <%@stats.per_day.times do |p|%>
+            <input type="checkbox" name="spell_slot" id="spell_slot">
+            <% end %><br/>
+    <div id='feature-bio'>    
+        Features: <%=@stats.features%><br>
+        Bio: <%=@stats.bio%><br><br>
+    </div>
+</div>
 <a href="/characters">Back to characters</a><br>
 

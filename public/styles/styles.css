@@ -49,11 +49,13 @@ input[type=password] {
     justify-content: center;
 }
 
-.new-character form label{
-    display: inline-block;
+.new-character {
+    display: inline-block
 }
 
-
+ul {
+    list-style: none;
+}
 
 .footer {
     position: fixed;
