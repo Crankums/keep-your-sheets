@@ -11,6 +11,7 @@
 <body>
     <h1>Keep Your Sheets!</h1>
     <h2>Character sheet storage utility</h2>
+    <div class='navbar'>
     <% if logged_in? %>
      <h3><a href='/profile'>Profile</a> <a href="/characters">Characters</a></h3>
      <%else%>
@@ -18,8 +19,8 @@
             <button formaction="/login">Click here to login</button><br><br>
         </form>
      <%end%>
+     </div>
     <%= yield %>
-<br>
 
     <% if logged_in?%>
     <form>
