@@ -6,26 +6,29 @@
 </form>
 <div id='stat-block'>
     <div id='name-race-class'>
-        <b><%= @char.char_name%></b><br>
-        Race: <%= @char.race%><br>
-        Class: <%= @char.char_class%><br><br>
+        <ul>
+           <li><b><%= @char.char_name%></b></li>
+            <li>Race: <%= @char.race%></li>
+            <li>Class: <%= @char.char_class%></li>
+        </ul>
     </div>
     <div id='stat-scores'>
-        Might: <%=@stats.might%><br>
-        Agility: <%=@stats.agility%><br>
-        Endurance: <%=@stats.endurance%><br>
-        Guile: <%=@stats.guile%><br>
-        Wit: <%=@stats.wit%><br>
+        <ul>
+            Might: <%=@stats.might%>
+            Agility: <%=@stats.agility%>
+            Endurance: <%=@stats.endurance%>
+            Guile: <%=@stats.guile%>
+            Wit: <%=@stats.wit%>
+        </ul>
     </div>    
     <div id='stat-trackers'>
-        Hit Points: <%=@stats.hit_points%><br/>
+        Hit Points: <%=@stats.hit_points%>
         Spells Per Day: <%@stats.per_day.times do |p|%>
             <input type="checkbox" name="spell_slot" id="spell_slot">
-            <% end %><br/>
+            <% end %>
     <div id='feature-bio'>    
-        Features: <%=@stats.features%><br>
-        Bio: <%=@stats.bio%><br><br>
+        Features: <%=@stats.features%>
+        Bio: <%=@stats.bio%>
     </div>
 </div>
-<a href="/characters">Back to characters</a><br>
-
+<a href="/characters">Back to characters</a>
